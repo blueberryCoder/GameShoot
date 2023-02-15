@@ -11,5 +11,8 @@ Stage  stage;
 
 #define PLAY_RES "../res/player.png"
 #define BULLET_RES "../res/bullet.png"
-#define ALIEN_BULLET "../res/alienBullet.png"
+#define ALIEN_BULLET_RES "../res/alienBullet.png"
 #define ENEMY_RES "../res/enemy.png"
+#define BACKGROUND_RES "../res/background.png"
+#define EXPLOSION_RES "../res/explosion.png"
+

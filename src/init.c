@@ -39,5 +39,6 @@ void initSDL(void)
 		exit(1);
 	}
 
+    SDL_ShowCursor(0);
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
 }

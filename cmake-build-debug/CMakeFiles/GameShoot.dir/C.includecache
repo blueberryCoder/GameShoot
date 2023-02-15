@@ -12,14 +12,6 @@ structs.h
 
 /Users/bytedance/code/my/GameShoot/src/defs.h
 
-/Users/bytedance/code/my/GameShoot/src/draw.c
-SDL.h
--
-structs.h
-/Users/bytedance/code/my/GameShoot/src/structs.h
-SDL_image.h
--
-
 /Users/bytedance/code/my/GameShoot/src/draw.h
 SDL.h
 -
@@ -30,47 +22,11 @@ structs.h
 init.h
 /Users/bytedance/code/my/GameShoot/src/init.h
 
-/Users/bytedance/code/my/GameShoot/src/init.c
-SDL.h
--
-SDL_image.h
--
-common.h
-/Users/bytedance/code/my/GameShoot/src/common.h
-defs.h
-/Users/bytedance/code/my/GameShoot/src/defs.h
-
 /Users/bytedance/code/my/GameShoot/src/init.h
 structs.h
 /Users/bytedance/code/my/GameShoot/src/structs.h
 common.h
 /Users/bytedance/code/my/GameShoot/src/common.h
-
-/Users/bytedance/code/my/GameShoot/src/input.c
-SDL.h
--
-common.h
-/Users/bytedance/code/my/GameShoot/src/common.h
-
-/Users/bytedance/code/my/GameShoot/src/input.h
-SDL.h
--
-
-/Users/bytedance/code/my/GameShoot/src/main.c
-SDL.h
--
-SDL_thread.h
--
-structs.h
-/Users/bytedance/code/my/GameShoot/src/structs.h
-draw.h
-/Users/bytedance/code/my/GameShoot/src/draw.h
-init.h
-/Users/bytedance/code/my/GameShoot/src/init.h
-input.h
-/Users/bytedance/code/my/GameShoot/src/input.h
-stage.h
-/Users/bytedance/code/my/GameShoot/src/stage.h
 
 /Users/bytedance/code/my/GameShoot/src/stage.c
 common.h
@@ -89,10 +45,6 @@ SDL.h
 -
 defs.h
 /Users/bytedance/code/my/GameShoot/src/defs.h
-
-/Users/bytedance/code/my/GameShoot/src/util.c
-stdlib.h
-/Users/bytedance/code/my/GameShoot/src/stdlib.h
 
 /Users/bytedance/code/my/GameShoot/src/util.h
 
