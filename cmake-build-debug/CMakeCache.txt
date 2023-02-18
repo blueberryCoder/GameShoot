@@ -246,10 +246,19 @@ ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 pkgcfg_lib_SDL2_image_SDL2:FILEPATH=/usr/local/lib/libSDL2.dylib
 
 //Path to a library.
-pkgcfg_lib_SDL2_image_SDL2_image:FILEPATH=/usr/local/Cellar/sdl2_image/2.6.2_2/lib/libSDL2_image.dylib
+pkgcfg_lib_SDL2_image_SDL2_image:FILEPATH=/usr/local/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib
+
+//Path to a library.
+pkgcfg_lib_readline_readline:FILEPATH=/usr/local/Cellar/readline/8.2.1/lib/libreadline.dylib
 
 //Path to a library.
 pkgcfg_lib_sdl2_SDL2:FILEPATH=/usr/local/lib/libSDL2.dylib
+
+//Path to a library.
+pkgcfg_lib_sdl2_mixer_SDL2:FILEPATH=/usr/local/lib/libSDL2.dylib
+
+//Path to a library.
+pkgcfg_lib_sdl2_mixer_SDL2_mixer:FILEPATH=/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib/libSDL2_mixer.dylib
 
 
 ########################
@@ -407,17 +416,17 @@ PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
-SDL2_image_CFLAGS:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libpng/1.6.39/include/libpng16;-I/usr/local/Cellar/jpeg-xl/0.8.0/include;-I/usr/local/Cellar/highway/1.0.3/include;-I/usr/local/Cellar/brotli/1.0.9/include;-I/usr/local/Cellar/jpeg-turbo/2.1.5/include;-I/usr/local/Cellar/libtiff/4.4.0_1/include;-I/usr/local/Cellar/libavif/0.11.1/include;-I/usr/local/Cellar/webp/1.3.0/include;-I/usr/local/Cellar/webp/1.3.0/include/webp;-I/usr/local/include;-I/usr/local/include/SDL2;-I/opt/local/include
+SDL2_image_CFLAGS:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libpng/1.6.39/include/libpng16;-I/usr/local/Cellar/jpeg-xl/0.8.1/include;-I/usr/local/Cellar/highway/1.0.3/include;-I/usr/local/Cellar/brotli/1.0.9/include;-I/usr/local/Cellar/jpeg-turbo/2.1.5.1/include;-I/usr/local/Cellar/libtiff/4.4.0_1/include;-I/usr/local/Cellar/libavif/0.11.1/include;-I/usr/local/Cellar/webp/1.3.0/include;-I/usr/local/Cellar/webp/1.3.0/include/webp;-I/usr/local/include;-I/usr/local/include/SDL2;-I/opt/local/include
 SDL2_image_CFLAGS_I:INTERNAL=
 SDL2_image_CFLAGS_OTHER:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE
 SDL2_image_FOUND:INTERNAL=1
 SDL2_image_INCLUDEDIR:INTERNAL=/usr/local/include
-SDL2_image_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libpng/1.6.39/include/libpng16;/usr/local/Cellar/jpeg-xl/0.8.0/include;/usr/local/Cellar/highway/1.0.3/include;/usr/local/Cellar/brotli/1.0.9/include;/usr/local/Cellar/jpeg-turbo/2.1.5/include;/usr/local/Cellar/libtiff/4.4.0_1/include;/usr/local/Cellar/libavif/0.11.1/include;/usr/local/Cellar/webp/1.3.0/include;/usr/local/Cellar/webp/1.3.0/include/webp;/usr/local/include;/usr/local/include/SDL2;/opt/local/include
-SDL2_image_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_image/2.6.2_2/lib;-L/usr/local/lib;-lSDL2_image;-lSDL2
+SDL2_image_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libpng/1.6.39/include/libpng16;/usr/local/Cellar/jpeg-xl/0.8.1/include;/usr/local/Cellar/highway/1.0.3/include;/usr/local/Cellar/brotli/1.0.9/include;/usr/local/Cellar/jpeg-turbo/2.1.5.1/include;/usr/local/Cellar/libtiff/4.4.0_1/include;/usr/local/Cellar/libavif/0.11.1/include;/usr/local/Cellar/webp/1.3.0/include;/usr/local/Cellar/webp/1.3.0/include/webp;/usr/local/include;/usr/local/include/SDL2;/opt/local/include
+SDL2_image_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_image/2.6.3/lib;-L/usr/local/lib;-lSDL2_image;-lSDL2
 SDL2_image_LDFLAGS_OTHER:INTERNAL=
-SDL2_image_LIBDIR:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.2_2/lib
+SDL2_image_LIBDIR:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.3/lib
 SDL2_image_LIBRARIES:INTERNAL=SDL2_image;SDL2
-SDL2_image_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.2_2/lib;/usr/local/lib
+SDL2_image_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.3/lib;/usr/local/lib
 SDL2_image_LIBS:INTERNAL=
 SDL2_image_LIBS_L:INTERNAL=
 SDL2_image_LIBS_OTHER:INTERNAL=
@@ -428,31 +437,76 @@ SDL2_image_SDL2_image_INCLUDEDIR:INTERNAL=
 SDL2_image_SDL2_image_LIBDIR:INTERNAL=
 SDL2_image_SDL2_image_PREFIX:INTERNAL=
 SDL2_image_SDL2_image_VERSION:INTERNAL=
-SDL2_image_STATIC_CFLAGS:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libpng/1.6.39/include/libpng16;-I/usr/local/Cellar/jpeg-xl/0.8.0/include;-I/usr/local/Cellar/highway/1.0.3/include;-I/usr/local/Cellar/brotli/1.0.9/include;-I/usr/local/Cellar/jpeg-turbo/2.1.5/include;-I/usr/local/Cellar/libtiff/4.4.0_1/include;-I/usr/local/Cellar/libavif/0.11.1/include;-I/usr/local/Cellar/webp/1.3.0/include;-I/usr/local/Cellar/webp/1.3.0/include/webp;-I/usr/local/include;-I/usr/local/include/SDL2;-I/opt/local/include
+SDL2_image_STATIC_CFLAGS:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libpng/1.6.39/include/libpng16;-I/usr/local/Cellar/jpeg-xl/0.8.1/include;-I/usr/local/Cellar/highway/1.0.3/include;-I/usr/local/Cellar/brotli/1.0.9/include;-I/usr/local/Cellar/jpeg-turbo/2.1.5.1/include;-I/usr/local/Cellar/libtiff/4.4.0_1/include;-I/usr/local/Cellar/libavif/0.11.1/include;-I/usr/local/Cellar/webp/1.3.0/include;-I/usr/local/Cellar/webp/1.3.0/include/webp;-I/usr/local/include;-I/usr/local/include/SDL2;-I/opt/local/include
 SDL2_image_STATIC_CFLAGS_I:INTERNAL=
 SDL2_image_STATIC_CFLAGS_OTHER:INTERNAL=-DHWY_SHARED_DEFINE;-DAVIF_DLL;-D_THREAD_SAFE
-SDL2_image_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libpng/1.6.39/include/libpng16;/usr/local/Cellar/jpeg-xl/0.8.0/include;/usr/local/Cellar/highway/1.0.3/include;/usr/local/Cellar/brotli/1.0.9/include;/usr/local/Cellar/jpeg-turbo/2.1.5/include;/usr/local/Cellar/libtiff/4.4.0_1/include;/usr/local/Cellar/libavif/0.11.1/include;/usr/local/Cellar/webp/1.3.0/include;/usr/local/Cellar/webp/1.3.0/include/webp;/usr/local/include;/usr/local/include/SDL2;/opt/local/include
-SDL2_image_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_image/2.6.2_2/lib;-L/usr/local/Cellar/libpng/1.6.39/lib;-L/usr/local/Cellar/jpeg-xl/0.8.0/lib;-L/usr/local/Cellar/highway/1.0.3/lib;-L/usr/local/Cellar/brotli/1.0.9/lib;-L/usr/local/Cellar/jpeg-turbo/2.1.5/lib;-L/usr/local/Cellar/libtiff/4.4.0_1/lib;-L/usr/local/Cellar/libavif/0.11.1/lib;-L/usr/local/Cellar/webp/1.3.0/lib;-L/usr/local/lib;-L/opt/local/lib;-lSDL2_image;-lpng16;-lz;-ljxl;-lm;-lhwy;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlienc;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlidec;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlicommon;-ljpeg;-ltiff;-ljpeg;-lz;-lavif;-lwebp;-lm;-D_THREAD_SAFE;-pthread;-lsharpyuv;-lm;-D_THREAD_SAFE;-pthread;-lSDL2;-lm;-liconv;-Wl,-framework,CoreAudio;-Wl,-framework,AudioToolbox;-Wl,-weak_framework,CoreHaptics;-Wl,-weak_framework,GameController;-Wl,-framework,ForceFeedback;-lobjc;-Wl,-framework,CoreVideo;-Wl,-framework,Cocoa;-Wl,-framework,Carbon;-Wl,-framework,IOKit;-Wl,-weak_framework,QuartzCore;-Wl,-weak_framework,Metal
+SDL2_image_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libpng/1.6.39/include/libpng16;/usr/local/Cellar/jpeg-xl/0.8.1/include;/usr/local/Cellar/highway/1.0.3/include;/usr/local/Cellar/brotli/1.0.9/include;/usr/local/Cellar/jpeg-turbo/2.1.5.1/include;/usr/local/Cellar/libtiff/4.4.0_1/include;/usr/local/Cellar/libavif/0.11.1/include;/usr/local/Cellar/webp/1.3.0/include;/usr/local/Cellar/webp/1.3.0/include/webp;/usr/local/include;/usr/local/include/SDL2;/opt/local/include
+SDL2_image_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_image/2.6.3/lib;-L/usr/local/Cellar/libpng/1.6.39/lib;-L/usr/local/Cellar/jpeg-xl/0.8.1/lib;-L/usr/local/Cellar/highway/1.0.3/lib;-L/usr/local/Cellar/brotli/1.0.9/lib;-L/usr/local/Cellar/jpeg-turbo/2.1.5.1/lib;-L/usr/local/Cellar/libtiff/4.4.0_1/lib;-L/usr/local/Cellar/libavif/0.11.1/lib;-L/usr/local/Cellar/webp/1.3.0/lib;-L/usr/local/lib;-L/opt/local/lib;-lSDL2_image;-lpng16;-lz;-ljxl;-lm;-lhwy;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlienc;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlidec;-R/usr/local/Cellar/brotli/1.0.9/lib;-lbrotlicommon;-ljpeg;-ltiff;-ljpeg;-lz;-lavif;-lwebp;-lm;-D_THREAD_SAFE;-pthread;-lsharpyuv;-lm;-D_THREAD_SAFE;-pthread;-lSDL2;-lm;-liconv;-Wl,-framework,CoreAudio;-Wl,-framework,AudioToolbox;-Wl,-weak_framework,CoreHaptics;-Wl,-weak_framework,GameController;-Wl,-framework,ForceFeedback;-lobjc;-Wl,-framework,CoreVideo;-Wl,-framework,Cocoa;-Wl,-framework,Carbon;-Wl,-framework,IOKit;-Wl,-weak_framework,QuartzCore;-Wl,-weak_framework,Metal
 SDL2_image_STATIC_LDFLAGS_OTHER:INTERNAL=-R/usr/local/Cellar/brotli/1.0.9/lib;-D_THREAD_SAFE;-pthread;-D_THREAD_SAFE;-pthread;-Wl,-framework,CoreAudio;-Wl,-framework,AudioToolbox;-Wl,-weak_framework,CoreHaptics;-Wl,-weak_framework,GameController;-Wl,-framework,ForceFeedback;-Wl,-framework,CoreVideo;-Wl,-framework,Cocoa;-Wl,-framework,Carbon;-Wl,-framework,IOKit;-Wl,-weak_framework,QuartzCore;-Wl,-weak_framework,Metal
 SDL2_image_STATIC_LIBDIR:INTERNAL=
 SDL2_image_STATIC_LIBRARIES:INTERNAL=SDL2_image;png16;z;jxl;m;hwy;brotlienc;brotlidec;brotlicommon;jpeg;tiff;jpeg;z;avif;webp;m;sharpyuv;m;SDL2;m;iconv;objc
-SDL2_image_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.2_2/lib;/usr/local/Cellar/libpng/1.6.39/lib;/usr/local/Cellar/jpeg-xl/0.8.0/lib;/usr/local/Cellar/highway/1.0.3/lib;/usr/local/Cellar/brotli/1.0.9/lib;/usr/local/Cellar/jpeg-turbo/2.1.5/lib;/usr/local/Cellar/libtiff/4.4.0_1/lib;/usr/local/Cellar/libavif/0.11.1/lib;/usr/local/Cellar/webp/1.3.0/lib;/usr/local/lib;/opt/local/lib
+SDL2_image_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.3/lib;/usr/local/Cellar/libpng/1.6.39/lib;/usr/local/Cellar/jpeg-xl/0.8.1/lib;/usr/local/Cellar/highway/1.0.3/lib;/usr/local/Cellar/brotli/1.0.9/lib;/usr/local/Cellar/jpeg-turbo/2.1.5.1/lib;/usr/local/Cellar/libtiff/4.4.0_1/lib;/usr/local/Cellar/libavif/0.11.1/lib;/usr/local/Cellar/webp/1.3.0/lib;/usr/local/lib;/opt/local/lib
 SDL2_image_STATIC_LIBS:INTERNAL=
 SDL2_image_STATIC_LIBS_L:INTERNAL=
 SDL2_image_STATIC_LIBS_OTHER:INTERNAL=
 SDL2_image_STATIC_LIBS_PATHS:INTERNAL=
-SDL2_image_VERSION:INTERNAL=2.6.2
+SDL2_image_VERSION:INTERNAL=2.6.3
 __pkg_config_arguments_SDL2_image:INTERNAL=REQUIRED;IMPORTED_TARGET;SDL2_image
+__pkg_config_arguments_readline:INTERNAL=REQUIRED;IMPORTED_TARGET;readline
 __pkg_config_arguments_sdl2:INTERNAL=REQUIRED;IMPORTED_TARGET;sdl2
+__pkg_config_arguments_sdl2_mixer:INTERNAL=REQUIRED;IMPORTED_TARGET;sdl2_mixer
 __pkg_config_checked_SDL2_image:INTERNAL=1
+__pkg_config_checked_readline:INTERNAL=1
 __pkg_config_checked_sdl2:INTERNAL=1
+__pkg_config_checked_sdl2_mixer:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SDL2_image_SDL2
 pkgcfg_lib_SDL2_image_SDL2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_SDL2_image_SDL2_image
 pkgcfg_lib_SDL2_image_SDL2_image-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_readline_readline
+pkgcfg_lib_readline_readline-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_sdl2_SDL2
 pkgcfg_lib_sdl2_SDL2-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/local/Cellar/sdl2_image/2.6.2_2/lib
+//ADVANCED property for variable: pkgcfg_lib_sdl2_mixer_SDL2
+pkgcfg_lib_sdl2_mixer_SDL2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_sdl2_mixer_SDL2_mixer
+pkgcfg_lib_sdl2_mixer_SDL2_mixer-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib
+readline_CFLAGS:INTERNAL=-D_DARWIN_C_SOURCE;-I/usr/local/Cellar/readline/8.2.1/include;-I/opt/local/include
+readline_CFLAGS_I:INTERNAL=
+readline_CFLAGS_OTHER:INTERNAL=-D_DARWIN_C_SOURCE
+readline_FOUND:INTERNAL=1
+readline_INCLUDEDIR:INTERNAL=/usr/local/Cellar/readline/8.2.1/include
+readline_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/readline/8.2.1/include;/opt/local/include
+readline_LDFLAGS:INTERNAL=-L/usr/local/Cellar/readline/8.2.1/lib;-lreadline
+readline_LDFLAGS_OTHER:INTERNAL=
+readline_LIBDIR:INTERNAL=/usr/local/Cellar/readline/8.2.1/lib
+readline_LIBRARIES:INTERNAL=readline
+readline_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/readline/8.2.1/lib
+readline_LIBS:INTERNAL=
+readline_LIBS_L:INTERNAL=
+readline_LIBS_OTHER:INTERNAL=
+readline_LIBS_PATHS:INTERNAL=
+readline_MODULE_NAME:INTERNAL=readline
+readline_PREFIX:INTERNAL=/usr/local/Cellar/readline/8.2.1
+readline_STATIC_CFLAGS:INTERNAL=-D_DARWIN_C_SOURCE;-I/usr/local/Cellar/readline/8.2.1/include;-I/opt/local/include
+readline_STATIC_CFLAGS_I:INTERNAL=
+readline_STATIC_CFLAGS_OTHER:INTERNAL=-D_DARWIN_C_SOURCE
+readline_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/readline/8.2.1/include;/opt/local/include
+readline_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/readline/8.2.1/lib;-L/opt/local/lib;-lreadline;-Wl,-search_paths_first;-lncurses
+readline_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,-search_paths_first
+readline_STATIC_LIBDIR:INTERNAL=
+readline_STATIC_LIBRARIES:INTERNAL=readline;ncurses
+readline_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/readline/8.2.1/lib;/opt/local/lib
+readline_STATIC_LIBS:INTERNAL=
+readline_STATIC_LIBS_L:INTERNAL=
+readline_STATIC_LIBS_OTHER:INTERNAL=
+readline_STATIC_LIBS_PATHS:INTERNAL=
+readline_VERSION:INTERNAL=8.2
+readline_readline_INCLUDEDIR:INTERNAL=
+readline_readline_LIBDIR:INTERNAL=
+readline_readline_PREFIX:INTERNAL=
+readline_readline_VERSION:INTERNAL=
 sdl2_CFLAGS:INTERNAL=-D_THREAD_SAFE;-I/usr/local/include;-I/usr/local/include/SDL2
 sdl2_CFLAGS_I:INTERNAL=
 sdl2_CFLAGS_OTHER:INTERNAL=-D_THREAD_SAFE
@@ -483,7 +537,42 @@ sdl2_STATIC_LIBS:INTERNAL=
 sdl2_STATIC_LIBS_L:INTERNAL=
 sdl2_STATIC_LIBS_OTHER:INTERNAL=
 sdl2_STATIC_LIBS_PATHS:INTERNAL=
-sdl2_VERSION:INTERNAL=2.26.2
+sdl2_VERSION:INTERNAL=2.26.3
+sdl2_mixer_CFLAGS:INTERNAL=-D_DARWIN_C_SOURCE;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libxmp/4.5.0/include;-I/usr/local/Cellar/fluid-synth/2.3.1/include;-I/usr/local/Cellar/glib/2.74.5/include;-I/usr/local/Cellar/glib/2.74.5/include/glib-2.0;-I/usr/local/Cellar/glib/2.74.5/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include;-I/usr/local/Cellar/libsndfile/1.2.0/include;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/portaudio/19.7.0/include;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.2/include;-I/usr/local/Cellar/mpg123/1.31.2/include;-I/usr/local/Cellar/opusfile/0.12/include/opus;-I/usr/local/Cellar/libogg/1.3.5/include;-I/usr/local/Cellar/opus/1.3.1/include/opus;-I/usr/local/include;-I/usr/local/include/SDL2;-I/usr/local/Cellar/readline/8.2.1/include;-I/opt/local/include
+sdl2_mixer_CFLAGS_I:INTERNAL=
+sdl2_mixer_CFLAGS_OTHER:INTERNAL=-D_DARWIN_C_SOURCE;-D_THREAD_SAFE
+sdl2_mixer_FOUND:INTERNAL=1
+sdl2_mixer_INCLUDEDIR:INTERNAL=/usr/local/include
+sdl2_mixer_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libxmp/4.5.0/include;/usr/local/Cellar/fluid-synth/2.3.1/include;/usr/local/Cellar/glib/2.74.5/include;/usr/local/Cellar/glib/2.74.5/include/glib-2.0;/usr/local/Cellar/glib/2.74.5/lib/glib-2.0/include;/usr/local/opt/gettext/include;/usr/local/Cellar/pcre2/10.42/include;/usr/local/Cellar/libsndfile/1.2.0/include;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/portaudio/19.7.0/include;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.2/include;/usr/local/Cellar/mpg123/1.31.2/include;/usr/local/Cellar/opusfile/0.12/include/opus;/usr/local/Cellar/libogg/1.3.5/include;/usr/local/Cellar/opus/1.3.1/include/opus;/usr/local/include;/usr/local/include/SDL2;/usr/local/Cellar/readline/8.2.1/include;/opt/local/include
+sdl2_mixer_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib;-L/usr/local/lib;-lSDL2_mixer;-lSDL2
+sdl2_mixer_LDFLAGS_OTHER:INTERNAL=
+sdl2_mixer_LIBDIR:INTERNAL=/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib
+sdl2_mixer_LIBRARIES:INTERNAL=SDL2_mixer;SDL2
+sdl2_mixer_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib;/usr/local/lib
+sdl2_mixer_LIBS:INTERNAL=
+sdl2_mixer_LIBS_L:INTERNAL=
+sdl2_mixer_LIBS_OTHER:INTERNAL=
+sdl2_mixer_LIBS_PATHS:INTERNAL=
+sdl2_mixer_MODULE_NAME:INTERNAL=sdl2_mixer
+sdl2_mixer_PREFIX:INTERNAL=/usr/local
+sdl2_mixer_STATIC_CFLAGS:INTERNAL=-D_DARWIN_C_SOURCE;-D_THREAD_SAFE;-I/usr/local/include/SDL2;-I/usr/local/Cellar/libxmp/4.5.0/include;-I/usr/local/Cellar/fluid-synth/2.3.1/include;-I/usr/local/Cellar/glib/2.74.5/include;-I/usr/local/Cellar/glib/2.74.5/include/glib-2.0;-I/usr/local/Cellar/glib/2.74.5/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include;-I/usr/local/Cellar/libsndfile/1.2.0/include;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/portaudio/19.7.0/include;-I/usr/local/Cellar/libvorbis/1.3.7/include;-I/usr/local/Cellar/flac/1.4.2/include;-I/usr/local/Cellar/mpg123/1.31.2/include;-I/usr/local/Cellar/opusfile/0.12/include/opus;-I/usr/local/Cellar/libogg/1.3.5/include;-I/usr/local/Cellar/opus/1.3.1/include/opus;-I/usr/local/include;-I/usr/local/include/SDL2;-I/usr/local/Cellar/readline/8.2.1/include;-I/opt/local/include
+sdl2_mixer_STATIC_CFLAGS_I:INTERNAL=
+sdl2_mixer_STATIC_CFLAGS_OTHER:INTERNAL=-D_DARWIN_C_SOURCE;-D_THREAD_SAFE
+sdl2_mixer_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include/SDL2;/usr/local/Cellar/libxmp/4.5.0/include;/usr/local/Cellar/fluid-synth/2.3.1/include;/usr/local/Cellar/glib/2.74.5/include;/usr/local/Cellar/glib/2.74.5/include/glib-2.0;/usr/local/Cellar/glib/2.74.5/lib/glib-2.0/include;/usr/local/opt/gettext/include;/usr/local/Cellar/pcre2/10.42/include;/usr/local/Cellar/libsndfile/1.2.0/include;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/portaudio/19.7.0/include;/usr/local/Cellar/libvorbis/1.3.7/include;/usr/local/Cellar/flac/1.4.2/include;/usr/local/Cellar/mpg123/1.31.2/include;/usr/local/Cellar/opusfile/0.12/include/opus;/usr/local/Cellar/libogg/1.3.5/include;/usr/local/Cellar/opus/1.3.1/include/opus;/usr/local/include;/usr/local/include/SDL2;/usr/local/Cellar/readline/8.2.1/include;/opt/local/include
+sdl2_mixer_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib;-L/usr/local/Cellar/libxmp/4.5.0/lib;-L/usr/local/Cellar/fluid-synth/2.3.1/lib;-L/usr/local/Cellar/glib/2.74.5/lib;-L/usr/local/opt/gettext/lib;-L/usr/local/Cellar/pcre2/10.42/lib;-L/usr/local/Cellar/libsndfile/1.2.0/lib;-L/usr/local/Cellar/libvorbis/1.3.7/lib;-L/usr/local/Cellar/portaudio/19.7.0/lib;-L/usr/local/Cellar/libvorbis/1.3.7/lib;-L/usr/local/Cellar/flac/1.4.2/lib;-L/usr/local/Cellar/mpg123/1.31.2/lib;-L/usr/local/Cellar/opusfile/0.12/lib;-L/usr/local/Cellar/libogg/1.3.5/lib;-L/usr/local/Cellar/opus/1.3.1/lib;-L/usr/local/lib;-L/usr/local/Cellar/readline/8.2.1/lib;-L/opt/local/lib;-lSDL2_mixer;-lxmp;-lm;-lfluidsynth;-lm;-Wl,-framework,CoreAudio,-framework,AudioUnit;-Wl,-framework,CoreMIDI,-framework,CoreServices;-lgthread-2.0;-lintl;-lglib-2.0;-lintl;-liconv;-framework;Foundation;-framework;CoreFoundation;-framework;AppKit;-framework;Carbon;-lm;-lpcre2-8;-D_THREAD_SAFE;-pthread;-lsndfile;-lmp3lame;-lvorbisenc;-lportaudio;-framework;CoreAudio;-framework;AudioToolbox;-framework;AudioUnit;-framework;CoreFoundation;-framework;CoreServices;-lreadline;-Wl,-search_paths_first;-lncurses;-lvorbisfile;-lvorbis;-lm;-lFLAC;-lm;-lmpg123;-lopusfile;-logg;-lopus;-lSDL2;-lm;-liconv;-Wl,-framework,CoreAudio;-Wl,-framework,AudioToolbox;-Wl,-weak_framework,CoreHaptics;-Wl,-weak_framework,GameController;-Wl,-framework,ForceFeedback;-lobjc;-Wl,-framework,CoreVideo;-Wl,-framework,Cocoa;-Wl,-framework,Carbon;-Wl,-framework,IOKit;-Wl,-weak_framework,QuartzCore;-Wl,-weak_framework,Metal
+sdl2_mixer_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,-framework,CoreAudio,-framework,AudioUnit;-Wl,-framework,CoreMIDI,-framework,CoreServices;-framework;Foundation;-framework;CoreFoundation;-framework;AppKit;-framework;Carbon;-D_THREAD_SAFE;-pthread;-framework;CoreAudio;-framework;AudioToolbox;-framework;AudioUnit;-framework;CoreFoundation;-framework;CoreServices;-Wl,-search_paths_first;-Wl,-framework,CoreAudio;-Wl,-framework,AudioToolbox;-Wl,-weak_framework,CoreHaptics;-Wl,-weak_framework,GameController;-Wl,-framework,ForceFeedback;-Wl,-framework,CoreVideo;-Wl,-framework,Cocoa;-Wl,-framework,Carbon;-Wl,-framework,IOKit;-Wl,-weak_framework,QuartzCore;-Wl,-weak_framework,Metal
+sdl2_mixer_STATIC_LIBDIR:INTERNAL=
+sdl2_mixer_STATIC_LIBRARIES:INTERNAL=SDL2_mixer;xmp;m;fluidsynth;m;gthread-2.0;intl;glib-2.0;intl;iconv;m;pcre2-8;sndfile;mp3lame;vorbisenc;portaudio;readline;ncurses;vorbisfile;vorbis;m;FLAC;m;mpg123;opusfile;ogg;opus;SDL2;m;iconv;objc
+sdl2_mixer_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/sdl2_mixer/2.6.3_1/lib;/usr/local/Cellar/libxmp/4.5.0/lib;/usr/local/Cellar/fluid-synth/2.3.1/lib;/usr/local/Cellar/glib/2.74.5/lib;/usr/local/opt/gettext/lib;/usr/local/Cellar/pcre2/10.42/lib;/usr/local/Cellar/libsndfile/1.2.0/lib;/usr/local/Cellar/libvorbis/1.3.7/lib;/usr/local/Cellar/portaudio/19.7.0/lib;/usr/local/Cellar/libvorbis/1.3.7/lib;/usr/local/Cellar/flac/1.4.2/lib;/usr/local/Cellar/mpg123/1.31.2/lib;/usr/local/Cellar/opusfile/0.12/lib;/usr/local/Cellar/libogg/1.3.5/lib;/usr/local/Cellar/opus/1.3.1/lib;/usr/local/lib;/usr/local/Cellar/readline/8.2.1/lib;/opt/local/lib
+sdl2_mixer_STATIC_LIBS:INTERNAL=
+sdl2_mixer_STATIC_LIBS_L:INTERNAL=
+sdl2_mixer_STATIC_LIBS_OTHER:INTERNAL=
+sdl2_mixer_STATIC_LIBS_PATHS:INTERNAL=
+sdl2_mixer_VERSION:INTERNAL=2.6.3
+sdl2_mixer_sdl2_mixer_INCLUDEDIR:INTERNAL=
+sdl2_mixer_sdl2_mixer_LIBDIR:INTERNAL=
+sdl2_mixer_sdl2_mixer_PREFIX:INTERNAL=
+sdl2_mixer_sdl2_mixer_VERSION:INTERNAL=
 sdl2_sdl2_INCLUDEDIR:INTERNAL=
 sdl2_sdl2_LIBDIR:INTERNAL=
 sdl2_sdl2_PREFIX:INTERNAL=

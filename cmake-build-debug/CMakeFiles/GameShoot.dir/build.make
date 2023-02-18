@@ -118,9 +118,22 @@ CMakeFiles/GameShoot.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GameShoot.dir/src/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bytedance/code/my/GameShoot/src/main.c -o CMakeFiles/GameShoot.dir/src/main.c.s
 
+CMakeFiles/GameShoot.dir/src/sound.c.o: CMakeFiles/GameShoot.dir/flags.make
+CMakeFiles/GameShoot.dir/src/sound.c.o: /Users/bytedance/code/my/GameShoot/src/sound.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/GameShoot.dir/src/sound.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GameShoot.dir/src/sound.c.o -c /Users/bytedance/code/my/GameShoot/src/sound.c
+
+CMakeFiles/GameShoot.dir/src/sound.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/GameShoot.dir/src/sound.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bytedance/code/my/GameShoot/src/sound.c > CMakeFiles/GameShoot.dir/src/sound.c.i
+
+CMakeFiles/GameShoot.dir/src/sound.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/GameShoot.dir/src/sound.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bytedance/code/my/GameShoot/src/sound.c -o CMakeFiles/GameShoot.dir/src/sound.c.s
+
 CMakeFiles/GameShoot.dir/src/stage.c.o: CMakeFiles/GameShoot.dir/flags.make
 CMakeFiles/GameShoot.dir/src/stage.c.o: /Users/bytedance/code/my/GameShoot/src/stage.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/GameShoot.dir/src/stage.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/GameShoot.dir/src/stage.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GameShoot.dir/src/stage.c.o -c /Users/bytedance/code/my/GameShoot/src/stage.c
 
 CMakeFiles/GameShoot.dir/src/stage.c.i: cmake_force
@@ -133,7 +146,7 @@ CMakeFiles/GameShoot.dir/src/stage.c.s: cmake_force
 
 CMakeFiles/GameShoot.dir/src/util.c.o: CMakeFiles/GameShoot.dir/flags.make
 CMakeFiles/GameShoot.dir/src/util.c.o: /Users/bytedance/code/my/GameShoot/src/util.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/GameShoot.dir/src/util.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/GameShoot.dir/src/util.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/GameShoot.dir/src/util.c.o -c /Users/bytedance/code/my/GameShoot/src/util.c
 
 CMakeFiles/GameShoot.dir/src/util.c.i: cmake_force
@@ -150,6 +163,7 @@ GameShoot_OBJECTS = \
 "CMakeFiles/GameShoot.dir/src/init.c.o" \
 "CMakeFiles/GameShoot.dir/src/input.c.o" \
 "CMakeFiles/GameShoot.dir/src/main.c.o" \
+"CMakeFiles/GameShoot.dir/src/sound.c.o" \
 "CMakeFiles/GameShoot.dir/src/stage.c.o" \
 "CMakeFiles/GameShoot.dir/src/util.c.o"
 
@@ -160,13 +174,15 @@ GameShoot: CMakeFiles/GameShoot.dir/src/draw.c.o
 GameShoot: CMakeFiles/GameShoot.dir/src/init.c.o
 GameShoot: CMakeFiles/GameShoot.dir/src/input.c.o
 GameShoot: CMakeFiles/GameShoot.dir/src/main.c.o
+GameShoot: CMakeFiles/GameShoot.dir/src/sound.c.o
 GameShoot: CMakeFiles/GameShoot.dir/src/stage.c.o
 GameShoot: CMakeFiles/GameShoot.dir/src/util.c.o
 GameShoot: CMakeFiles/GameShoot.dir/build.make
-GameShoot: /usr/local/Cellar/sdl2_image/2.6.2_2/lib/libSDL2_image.dylib
+GameShoot: /usr/local/Cellar/sdl2_image/2.6.3/lib/libSDL2_image.dylib
+GameShoot: /usr/local/Cellar/sdl2_mixer/2.6.3_1/lib/libSDL2_mixer.dylib
 GameShoot: /usr/local/lib/libSDL2.dylib
 GameShoot: CMakeFiles/GameShoot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable GameShoot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable GameShoot"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GameShoot.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

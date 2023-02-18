@@ -225,6 +225,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameShoot.dir/build.make CMakeFiles/GameShoot.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/sound.o: src/sound.c.o
+.PHONY : src/sound.o
+
+# target to build an object file
+src/sound.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameShoot.dir/build.make CMakeFiles/GameShoot.dir/src/sound.c.o
+.PHONY : src/sound.c.o
+
+src/sound.i: src/sound.c.i
+.PHONY : src/sound.i
+
+# target to preprocess a source file
+src/sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameShoot.dir/build.make CMakeFiles/GameShoot.dir/src/sound.c.i
+.PHONY : src/sound.c.i
+
+src/sound.s: src/sound.c.s
+.PHONY : src/sound.s
+
+# target to generate assembly for a file
+src/sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameShoot.dir/build.make CMakeFiles/GameShoot.dir/src/sound.c.s
+.PHONY : src/sound.c.s
+
 src/stage.o: src/stage.c.o
 .PHONY : src/stage.o
 
@@ -294,6 +318,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sound.o"
+	@echo "... src/sound.i"
+	@echo "... src/sound.s"
 	@echo "... src/stage.o"
 	@echo "... src/stage.i"
 	@echo "... src/stage.s"

@@ -5,6 +5,7 @@
 #include "draw.h"
 #include "stage.h"
 #include "util.h"
+#include "sound.h"
 
 static SDL_Texture *bulletTexture;
 static SDL_Texture *enemyTexture;
@@ -16,7 +17,7 @@ static int enemySpawnTimer = 0;
 static int stageResetTimer = FPS * 2;
 static Star stars[MAX_STARS];
 
-static backgroundX = 0;
+static int backgroundX = 0;
 
 static void resetStage(void);
 
@@ -365,6 +366,13 @@ static int bulletHitFighter(Entity *b) {
             // TODO
             addExplosions(e->x, e->y, 1);
             addDebris(e);
+
+            if (e == player) {
+                playSound(SND_PLAYER_DIE, CH_PLAYER);
+            } else {
+                playSound(SND_ALIEN_DIE, CH_ANY);
+            }
+
             return 1;
         }
     }
@@ -421,6 +429,7 @@ static void doPlayer(void) {
         // LCTRL
         if (app.keyboard[SDL_SCANCODE_A] && player->reload == 0) {
             fireBullet();
+            playSound(SND_PLAYER_FIRE, CH_PLAYER);
         }
 
         player->x += player->dx;
@@ -433,6 +442,7 @@ static void doEnemies(void) {
     for (e = stage.fighterHead.next; e != NULL; e = e->next) {
         if (e != player && player != NULL && --e->reload <= 0) {
             fireAlienBullet(e);
+            playSound(SND_ALIEN_FIRE, CH_ALIEN_FIRE);
         }
     }
 }

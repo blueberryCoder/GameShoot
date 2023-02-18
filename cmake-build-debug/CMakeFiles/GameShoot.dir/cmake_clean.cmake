@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/GameShoot.dir/src/init.c.o"
   "CMakeFiles/GameShoot.dir/src/input.c.o"
   "CMakeFiles/GameShoot.dir/src/main.c.o"
+  "CMakeFiles/GameShoot.dir/src/sound.c.o"
   "CMakeFiles/GameShoot.dir/src/stage.c.o"
   "CMakeFiles/GameShoot.dir/src/util.c.o"
   "GameShoot"

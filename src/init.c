@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include "common.h"
 #include "defs.h"
+#include <SDL_mixer.h>
 
 void initSDL(void)
 {
@@ -41,4 +42,10 @@ void initSDL(void)
 
     SDL_ShowCursor(0);
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
+
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) == -1) {
+        printf("Couldn't initialize SDL Mixer \n");
+        exit(1);
+    }
+    Mix_AllocateChannels(MAX_SND_CHANNELS);
 }

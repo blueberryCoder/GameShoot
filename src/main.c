@@ -8,7 +8,7 @@
 
 #include <SDL.h>
 #include <SDL_thread.h>
-
+#include "sound.h"
 
 #include "structs.h"
 #include "draw.h"
@@ -56,6 +56,8 @@ int main(int argc, char *argv[]) {
     initStage();
     then = SDL_GetTicks();
     remainder = 0;
+
+    initSounds();
 
     while (1) {
         prepareScene();
