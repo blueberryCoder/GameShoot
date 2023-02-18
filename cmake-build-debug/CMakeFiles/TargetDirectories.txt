@@ -1,3 +1,0 @@
-/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles/GameShoot.dir
-/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/bytedance/code/my/GameShoot/cmake-build-debug/CMakeFiles/rebuild_cache.dir
