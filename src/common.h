@@ -23,5 +23,7 @@ Mix_Music* music;
 #define SND_ALIEN_FIRE_RES  "../res/sound/196914__dpoggioli__laser-gun.ogg"
 #define SND_PLAYER_DIE_RES  "../res/sound/245372__quaker540__hq-explosion.ogg"
 #define SND_ALIEN_DIE_RES   "../res/sound/10 Guage Shotgun-SoundBible.com-74120584.ogg"
+#define SND_POINTS_RES      "../res/sound/342749__rhodesmas__notification-01.ogg"
 #define MUSIC_RES           "../res/music/Mercury.ogg"
 #define SND_FONT_RES        "../res/font.png"
+#define SND_PINTS_RES       "../res/points.png"

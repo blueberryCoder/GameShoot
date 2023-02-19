@@ -63,8 +63,9 @@ typedef struct Entity {
 } Entity;
 
 typedef struct {
-    struct Entity fighterHead, *fighterTail;
-    struct Entity bulletHead, *bulletTail;
+    Entity fighterHead, *fighterTail;
+    Entity bulletHead, *bulletTail;
+    Entity pointsHead, *pointsTail;
 
     Explosion explosionHead, *explosionTail;
     Debris debrisHead, *debrisTail;

@@ -15,6 +15,7 @@ void loadSounds(void) {
     sounds[SND_ALIEN_FIRE]  = Mix_LoadWAV(SND_ALIEN_FIRE_RES);
     sounds[SND_PLAYER_DIE]  = Mix_LoadWAV(SND_PLAYER_DIE_RES);
     sounds[SND_ALIEN_DIE]   = Mix_LoadWAV(SND_ALIEN_DIE_RES);
+    sounds[SND_POINTS]      = Mix_LoadWAV(SND_POINTS_RES);
 }
 
 void loadMusic(char *filename) {
