@@ -15,6 +15,7 @@
 #include "init.h"
 #include "input.h"
 #include "stage.h"
+#include "text.h"
 
 void cleanup(void) {
     printf(" Function called --> exit\n");
@@ -58,6 +59,7 @@ int main(int argc, char *argv[]) {
     remainder = 0;
 
     initSounds();
+    initFonts();
 
     while (1) {
         prepareScene();

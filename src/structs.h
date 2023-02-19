@@ -59,9 +59,6 @@ typedef struct Entity {
     SDL_Texture *texture;
     struct Entity *next;
 
-// #define SIDE_PLAYER  0
-// #define SIDE_ALIEN  1
-// one of them
     int side;
 } Entity;
 
@@ -71,5 +68,7 @@ typedef struct {
 
     Explosion explosionHead, *explosionTail;
     Debris debrisHead, *debrisTail;
+
+    int score;
 
 } Stage;

@@ -6,6 +6,7 @@
 #include "stage.h"
 #include "util.h"
 #include "sound.h"
+#include "text.h"
 
 static SDL_Texture *bulletTexture;
 static SDL_Texture *enemyTexture;
@@ -16,8 +17,8 @@ static SDL_Texture *explosionTexture;
 static int enemySpawnTimer = 0;
 static int stageResetTimer = FPS * 2;
 static Star stars[MAX_STARS];
-
 static int backgroundX = 0;
+static int highscore = 0;
 
 static void resetStage(void);
 
@@ -41,6 +42,7 @@ static void drawStarfield(void);
 static void drawDebris(void);
 
 static void drawExplosions(void);
+static void drawHud(void);
 
 
 static void doBackground(void) {
@@ -373,6 +375,9 @@ static int bulletHitFighter(Entity *b) {
                 playSound(SND_ALIEN_DIE, CH_ANY);
             }
 
+            stage.score ++;
+            highscore = MAX(stage.score, highscore);
+
             return 1;
         }
     }
@@ -482,6 +487,15 @@ static void drawBullets(void) {
     }
 }
 
+static void drawHud(void) {
+    drawText(10, 10, 255, 255, 255, "SCORE: %03d", stage.score);
+    if (stage.score > 0 && stage.score == highscore) {
+        drawText(960, 10, 0, 255, 0, "HIGH SCORE: %03d", highscore);
+    } else {
+        drawText(960, 10, 255, 255, 255, "HIGH SCORE: %03d", highscore);
+    }
+}
+
 static void draw(void) {
     drawBackground();
     drawStarfield();
@@ -491,6 +505,7 @@ static void draw(void) {
 
     drawDebris();
     drawExplosions();
+    drawHud();
 }
 
 static void resetStage(void) {
@@ -516,6 +531,7 @@ static void resetStage(void) {
     initPlayer();
     enemySpawnTimer = 0;
     stageResetTimer = FPS * 3;
+    stage.score = 0;
 }
 
 static void initStarfield(void)
@@ -562,5 +578,7 @@ void initStage(void) {
     background = loadTexture(BACKGROUND_RES);
     explosionTexture = loadTexture(EXPLOSION_RES);
 
+    loadMusic(MUSIC_RES);
+    playMusic(1);
     resetStage();
 }
