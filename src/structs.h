@@ -6,6 +6,12 @@
 #include <SDL.h>
 #include "defs.h"
 
+struct Texture {
+    char name[MAX_NAME_LENGTH];
+    SDL_Texture * texture;
+    struct Texture *next;
+};
+
 typedef struct Explosion {
     float x;
     float y;
@@ -43,6 +49,8 @@ typedef struct {
     SDL_Window *window;
     Delegate delegate;
     int keyboard[MAX_KEYBOARD_KEYS];
+
+    struct Texture textureHead, *textureTail;
 } App;
 
 typedef struct Entity {
@@ -61,6 +69,16 @@ typedef struct Entity {
 
     int side;
 } Entity;
+
+typedef struct {
+    int recent;
+    int score;
+} Highscore;
+
+typedef struct {
+    Highscore highscore[NUM_HIGHSCORES];
+} Highscores;
+
 
 typedef struct {
     Entity fighterHead, *fighterTail;

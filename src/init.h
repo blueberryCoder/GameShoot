@@ -5,4 +5,8 @@
 
 #include "structs.h"
 #include "common.h"
+
 void initSDL(void);
+
+void initGame(void);
+

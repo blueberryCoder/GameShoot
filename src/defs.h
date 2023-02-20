@@ -14,6 +14,11 @@
 
 #define MAX_SND_CHANNELS       8
 #define MAX_LINE_LENGTH        1024
+#define NUM_HIGHSCORES         8
+#define MAX_NAME_LENGTH        32
+
+
+#define STRNCPY(dest, src, n) strncpy(dest, src, n); dest[n - 1] = '\0'
 
 enum {
     CH_ANY = -1,

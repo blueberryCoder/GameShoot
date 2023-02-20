@@ -16,9 +16,15 @@
 #include "input.h"
 #include "stage.h"
 #include "text.h"
+#include "highscore.h"
 
 void cleanup(void) {
     printf(" Function called --> exit\n");
+    Mix_Quit();
+    IMG_Quit();
+    SDL_DestroyRenderer(app.renderer);
+    SDL_DestroyWindow(app.window);
+    SDL_Quit();
     return;
 }
 static void capFrameRate(long *then, float *remainder)
@@ -51,7 +57,7 @@ int main(int argc, char *argv[]) {
     float remainder;
     memset(&app, 0, sizeof(App));
 
-
+    app.textureTail = &app.textureHead;
     initSDL();
     atexit(cleanup);
     initStage();
@@ -60,6 +66,9 @@ int main(int argc, char *argv[]) {
 
     initSounds();
     initFonts();
+    initHighscores();
+
+    initGame();
 
     while (1) {
         prepareScene();

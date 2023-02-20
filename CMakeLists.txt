@@ -17,7 +17,7 @@ pkg_check_modules(sdl2_mixer REQUIRED IMPORTED_TARGET sdl2_mixer)
 # /usr/local/Cellar/readline/8.2.1/lib/pkgconfig
 ## Cmake load readline
 
-add_executable(${PROJECT_NAME} ${src} src/text.c src/text.h)
+add_executable(${PROJECT_NAME} ${src} )
 
 
 target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::sdl2 PkgConfig::SDL2_image PkgConfig::sdl2_mixer)

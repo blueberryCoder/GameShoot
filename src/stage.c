@@ -7,18 +7,17 @@
 #include "util.h"
 #include "sound.h"
 #include "text.h"
+#include "highscore.h"
+#include "background.h"
 
 static SDL_Texture *bulletTexture;
 static SDL_Texture *enemyTexture;
 static SDL_Texture *alienBulletTexture;
-static SDL_Texture *background;
 static SDL_Texture *explosionTexture;
 static SDL_Texture *pointsTexture;
 
 static int enemySpawnTimer = 0;
 static int stageResetTimer = FPS * 2;
-static Star stars[MAX_STARS];
-static int backgroundX = 0;
 static int highscore = 0;
 
 static void resetStage(void);
@@ -27,13 +26,8 @@ static void fireAlienBullet(Entity *e);
 
 static void clipPlayer(void);
 
-static void initStarfield(void);
-
 static void doBullets(void);
 
-static void doBackground(void);
-
-static void doStarfield(void);
 
 static void doExplosions(void);
 
@@ -45,10 +39,6 @@ static void addExplosions(int x, int y, int num);
 
 static void addPointsPod(int x, int y);
 
-static void drawBackground(void);
-
-static void drawStarfield(void);
-
 static void drawDebris(void);
 
 static void drawExplosions(void);
@@ -57,21 +47,6 @@ static void drawHud(void);
 
 static void drawPointsPods(void);
 
-static void doBackground(void) {
-    if (--backgroundX < -SCREEN_WIDTH) {
-        backgroundX = 0;
-    }
-}
-
-static void doStarfield(void) {
-    int i;
-    for (i = 0; i < MAX_STARS; i++) {
-        stars[i].x -= stars[i].speed;
-        if (stars[i].x < 0) {
-            stars[i].x = SCREEN_WIDTH + stars[i].x;
-        }
-    }
-}
 
 static void doExplosions(void) {
     Explosion *e, *prev;
@@ -269,31 +244,6 @@ static void doPointsPods(void) {
 }
 
 
-static void drawBackground(void) {
-    SDL_Rect dest;
-    int x;
-
-    for (x = backgroundX; x < SCREEN_WIDTH; x += SCREEN_WIDTH) {
-        dest.x = x;
-        dest.y = 0;
-        dest.w = SCREEN_WIDTH;
-        dest.h = SCREEN_HEIGHT;
-
-        SDL_RenderCopy(app.renderer, background, NULL, &dest);
-    }
-}
-
-static void drawStarfield(void) {
-    int i, c;
-
-    for (i = 0; i < MAX_STARS; i++) {
-        c = 32 * stars[i].speed;
-
-        SDL_SetRenderDrawColor(app.renderer, c, c, c, 255);
-
-        SDL_RenderDrawLine(app.renderer, stars[i].x, stars[i].y, stars[i].x + 3, stars[i].y);
-    }
-}
 
 static void drawDebris(void) {
     Debris *d;
@@ -537,7 +487,9 @@ static void logic(void) {
     doDebris();
     doPointsPods();
     if (player == NULL && --stageResetTimer <= 0) {
-        resetStage();
+//        resetStage();
+        addHighscore(stage.score);
+        initHighscores();
     }
 }
 
@@ -619,16 +571,6 @@ static void resetStage(void) {
     stage.score = 0;
 }
 
-static void initStarfield(void) {
-    int i;
-
-    for (i = 0; i < MAX_STARS; i++) {
-        stars[i].x = rand() % SCREEN_WIDTH;
-        stars[i].y = rand() % SCREEN_HEIGHT;
-        stars[i].speed = 1 + rand() % 8;
-    }
-}
-
 static void clipPlayer(void) {
     if (player != NULL) {
         if (player->x < 0) {
@@ -654,11 +596,10 @@ void initStage(void) {
     stage.fighterTail = &stage.fighterHead;
     stage.bulletTail = &stage.bulletHead;
 
-
     alienBulletTexture = loadTexture(ALIEN_BULLET_RES);
     bulletTexture = loadTexture(BULLET_RES);
     enemyTexture = loadTexture(ENEMY_RES);
-    background = loadTexture(BACKGROUND_RES);
+    initBackground();
     explosionTexture = loadTexture(EXPLOSION_RES);
     pointsTexture = loadTexture(SND_PINTS_RES);
 

@@ -3,9 +3,24 @@
 //
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
+
 #include "common.h"
 #include "defs.h"
-#include <SDL_mixer.h>
+#include "highscore.h"
+#include "sound.h"
+#include "text.h"
+#include "background.h"
+
+void initGame(void) {
+    initBackground();
+    initStarfield();
+    initSounds();
+    initFonts();
+    initHighscoreTable();
+    loadMusic(MUSIC_RES);
+    playMusic(1);
+}
 
 void initSDL(void)
 {
