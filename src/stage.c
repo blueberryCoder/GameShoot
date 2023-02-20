@@ -487,7 +487,6 @@ static void logic(void) {
     doDebris();
     doPointsPods();
     if (player == NULL && --stageResetTimer <= 0) {
-//        resetStage();
         addHighscore(stage.score);
         initHighscores();
     }
@@ -509,11 +508,11 @@ static void drawBullets(void) {
 }
 
 static void drawHud(void) {
-    drawText(10, 10, 255, 255, 255, "SCORE: %03d", stage.score);
+    drawText(10, 10, 255, 255, 255, TEXT_LEFT,"SCORE: %03d", stage.score);
     if (stage.score > 0 && stage.score == highscore) {
-        drawText(960, 10, 0, 255, 0, "HIGH SCORE: %03d", highscore);
+        drawText(960, 10, 0, 255, 0, TEXT_LEFT,"HIGH SCORE: %03d", highscore);
     } else {
-        drawText(960, 10, 255, 255, 255, "HIGH SCORE: %03d", highscore);
+        drawText(960, 10, 255, 255, 255, TEXT_LEFT,"HIGH SCORE: %03d", highscore);
     }
 }
 

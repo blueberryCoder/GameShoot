@@ -16,6 +16,7 @@
 #define MAX_LINE_LENGTH        1024
 #define NUM_HIGHSCORES         8
 #define MAX_NAME_LENGTH        32
+#define MAX_SCORE_NAME_LENGTH  16
 
 
 #define STRNCPY(dest, src, n) strncpy(dest, src, n); dest[n - 1] = '\0'
@@ -34,4 +35,10 @@ enum {
     SND_ALIEN_DIE,
     SND_POINTS,
     SND_MAX
+};
+
+enum {
+    TEXT_LEFT,
+    TEXT_CENTER,
+    TEXT_RIGHT
 };

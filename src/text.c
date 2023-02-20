@@ -5,9 +5,6 @@
 #include "draw.h"
 #include "defs.h"
 
-#define GLYPH_WIDTH     18
-#define GLYPH_HEIGHT    28
-
 char drawTextBuffer[MAX_LINE_LENGTH];
 SDL_Texture * fontTexture;
 
@@ -15,7 +12,7 @@ void initFonts(void) {
     fontTexture = loadTexture(SND_FONT_RES);
 }
 
-void drawText(int x, int y, int r, int g, int b, char *format, ...) {
+void drawText(int x, int y, int r, int g, int b, int align, char *format, ...) {
     int      i, len, c;
     SDL_Rect rect;
     va_list  args;
@@ -27,6 +24,15 @@ void drawText(int x, int y, int r, int g, int b, char *format, ...) {
     va_end(args);
 
     len = strlen(drawTextBuffer);
+
+    switch (align) {
+        case TEXT_RIGHT:
+            x -= (len * GLYPH_WIDTH);
+            break;
+        case TEXT_CENTER:
+            x -= (len * GLYPH_WIDTH) /2;
+            break;
+    }
 
     rect.w = GLYPH_WIDTH;
     rect.h = GLYPH_HEIGHT;
