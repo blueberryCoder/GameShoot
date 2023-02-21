@@ -8,9 +8,15 @@
 #include "text.h"
 #include "background.h"
 #include "stage.h"
+#include "title.h"
 
-Highscore *newHighscore = NULL;
-int cursorBlink = 0;
+static Highscore *newHighscore = NULL;
+static int cursorBlink = 0;
+static int timeout;
+
+static void logic(void);
+
+static void logic(void);
 
 static void doNameInput(void);
 
@@ -89,6 +95,9 @@ static void logic(void) {
     if (newHighscore != NULL) {
         doNameInput();
     } else {
+        if(--timeout <= 0) {
+            initTitle();
+        }
         if (app.keyboard[SDL_SCANCODE_A]) {
             initStage();
         }
@@ -113,6 +122,7 @@ void initHighscores(void) {
     app.delegate.logic = logic;
     app.delegate.draw = draw;
     memset(app.keyboard, 0, sizeof(int) * MAX_KEYBOARD_KEYS);
+    timeout = FPS *5;
 }
 
 static void doNameInput(void) {

@@ -27,3 +27,5 @@ Mix_Music* music;
 #define MUSIC_RES           "../res/music/Mercury.ogg"
 #define SND_FONT_RES        "../res/font.png"
 #define SND_PINTS_RES       "../res/points.png"
+#define SND_SDL2_RES        "../res/sdl2.png"
+#define SND_SHOOTER_RES     "../res/shooter.png"

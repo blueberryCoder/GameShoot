@@ -16,7 +16,7 @@
 #include "input.h"
 #include "stage.h"
 #include "text.h"
-#include "highscore.h"
+#include "title.h"
 
 void cleanup(void) {
     printf(" Function called --> exit\n");
@@ -66,8 +66,8 @@ int main(int argc, char *argv[]) {
 
     initSounds();
     initFonts();
-    initHighscores();
 
+    initTitle();
     initGame();
 
     while (1) {

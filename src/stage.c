@@ -47,7 +47,6 @@ static void drawHud(void);
 
 static void drawPointsPods(void);
 
-
 static void doExplosions(void) {
     Explosion *e, *prev;
 
@@ -312,6 +311,10 @@ static void spawnEnemies(void) {
         enemy->texture = enemyTexture;
         SDL_QueryTexture(enemy->texture, NULL, NULL, &enemy->w, &enemy->h);
         enemy->dx = -(2 + (rand() % 4));
+
+        enemy->dy = -100 + (rand() % 200);
+        enemy->dy /= 100;
+
         enemySpawnTimer = 30 + (rand() % 60);
         enemy->reload = FPS * (1 + rand() % 3);
     }
@@ -383,8 +386,7 @@ static int bulletHitFighter(Entity *b) {
         if (e->side != b->side && collision(b->x, b->y, b->w, b->h, e->x, e->y, e->w, e->h)) {
             b->health = 0;
             e->health = 0;
-            // TODO
-            addExplosions(e->x, e->y, 1);
+            addExplosions(e->x, e->y, 32);
             addDebris(e);
 
             if (e == player) {
@@ -464,6 +466,7 @@ static void doPlayer(void) {
 static void doEnemies(void) {
     Entity *e;
     for (e = stage.fighterHead.next; e != NULL; e = e->next) {
+        e->y = MIN(MAX(e->y, 0), SCREEN_HEIGHT - e->h);
         if (e != player && player != NULL && --e->reload <= 0) {
             fireAlienBullet(e);
             playSound(SND_ALIEN_FIRE, CH_ALIEN_FIRE);
@@ -520,7 +523,9 @@ static void drawPointsPods(void) {
     Entity *e;
 
     for (e = stage.pointsHead.next; e != NULL; e = e->next) {
-        blit(e->texture, e->x, e->y);
+        if( e->health > (FPS *2) || e->health % 12 <6) {
+            blit(e->texture, e->x, e->y);
+        }
     }
 }
 
